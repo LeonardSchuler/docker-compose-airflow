@@ -1,8 +1,10 @@
-.PHONY: start services stop
+.PHONY: install start services stop
 
 start: volumes
 	docker-compose up -d
 	xdg-open http://www.localhost:8080/admin/
+
+install: clean volumes
 
 volumes:
 	mkdir -p volumes/airflow
